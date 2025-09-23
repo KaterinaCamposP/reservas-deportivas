@@ -1,46 +1,27 @@
-# Sistema de Reservas Deportivas
+# Evaluación Modular 3 -Equipo 8
 
-Sistema desarrollado para CodeWave que permite gestionar reservas en centros deportivos comunitarios.
+Participantes:
+- Daniela Figueroa
+- Katerina Campos 
 
-## 🏆 Características Principales
+Objetivo: 
+- Evaluar la capacidad del estudiante para aplicar de forma integrada técnicas de TDD, ATDD, diseño basado en principios SOLID, pruebas unitarias, uso de mocks, medición de cobertura y automatización de tests, desarrollando un módulo funcional de software con pruebas asociadas y buenas prácticas de la industria.
 
-- **Gestión de Canchas**: Registro y administración de canchas deportivas
-- **Sistema de Reservas**: Crear, modificar y cancelar reservas
-- **Prevención de Conflictos**: Verificación automática de disponibilidad
-- **Métricas**: Cálculo de reservas por día y estadísticas
-- **Arquitectura Limpia**: Implementado con principios SOLID y TDD
+# Comparativa entre JUnit y TestNG
 
-## 🛠 Tecnologías Utilizadas
+| Característica         | JUnit 5                          | TestNG                          |
+|-----------------------|-----------------------------------|---------------------------------|
+| **Anotaciones**       | @Test, @BeforeEach, @AfterEach    | @Test, @BeforeMethod, @AfterMethod |
+| **Parametrización**   | @ParameterizedTest, @ValueSource  | @DataProvider                   |
+| **Integración**       | Fácil con Maven/Gradle, IDEs      | Fácil con Maven/Gradle, IDEs    |
+| **Reportes**          | Integración con JaCoCo, surefire  | Integración con surefire, plugins|
+| **Flexibilidad**      | Muy flexible, modular, extensible | Flexible, permite dependencias entre tests |
+| **Popularidad**       | Muy popular en proyectos Java      | Popular, especialmente en pruebas avanzadas |
+| **Soporte**           | Comunidad amplia, documentación   | Comunidad activa, buena documentación |
 
-- **Java 17**: Lenguaje de programación principal
-- **JUnit 5**: Framework de testing unitario
-- **Mockito**: Librería para mocking y verificaciones
-- **JaCoCo**: Herramienta de medición de cobertura
-- **AssertJ**: Assertions fluidas para tests más legibles
-- **Maven**: Gestión de dependencias y build
+**Elección recomendada:**
 
-## 📁 Estructura del Proyecto
-
-```
-src/
-├── main/java/cl/kibernumacademy/reservas/
-│   ├── model/          # Entidades del dominio
-│   ├── service/        # Lógica de negocio
-│   ├── repository/     # Interfaces de acceso a datos
-│   ├── exception/      # Excepciones personalizadas
-│   └── util/          # Utilidades comunes
-└── test/java/cl/kibernumacademy/reservas/
-    ├── model/         # Tests unitarios de entidades
-    ├── service/       # Tests unitarios de servicios
-    └── integration/   # Tests de integración
-```
-
-## 🚀 Cómo Ejecutar
-
-### Prerrequisitos
-- Java 17 o superior
-- Maven 3.8+
-- Visual Studio Code con Extension Pack for Java
+Para este proyecto se utiliza **JUnit 5** por su integración nativa con herramientas modernas (JaCoCo, Maven), su sintaxis clara y modularidad, además de ser el estándar en la industria para proyectos Java recientes. TestNG es útil para pruebas más complejas con dependencias entre tests, pero JUnit cubre todas las necesidades del módulo actual.
 
 ### Comandos Básicos
 
@@ -64,113 +45,69 @@ open target/site/jacoco/index.html
 
 ```
 
-## 📊 Métricas de Calidad
+# 📌 Cumplimiento de Requerimientos
 
-### Cobertura de Código
-- **Objetivo**: Mínimo 80% de cobertura de líneas
-- **Herramienta**: JaCoCo
-- **Reporte**: Generado automáticamente en `target/site/jacoco/`
+## 1️⃣ TDD y Pruebas Unitarias
 
-### Principios Aplicados
-- **SOLID**: Single Responsibility, Dependency Inversion
-- **TDD**: Test-Driven Development desde el inicio
-- **Clean Code**: Nombres descriptivos, funciones pequeñas
-- **DRY**: Don't Repeat Yourself en validaciones
-
-## 🧪 Estrategia de Testing
-
-### Tests Unitarios
-- **Modelos**: Validación de constructores, getters, setters
-- **Servicios**: Lógica de negocio con mocks
-- **Utilidades**: Funciones de formateo y validación
-
-### Tests de Integración
-- **Flujos completos**: Desde registro de cancha hasta reserva
-- **Casos de conflicto**: Validación de reglas de negocio
-- **Manejo de errores**: Verificación de excepciones
-
-## 🔧 Configuración de Desarrollo
-
-### VS Code Settings
-```json
-{
-    "java.configuration.updateBuildConfiguration": "interactive",
-    "java.test.report.position": "sideView",
-    "files.exclude": {
-        "**/target": true
-    }
-}
-```
-
-### Maven Plugins Configurados
-- **maven-compiler-plugin**: Compilación con Java 17
-- **maven-surefire-plugin**: Ejecución de tests
-- **jacoco-maven-plugin**: Medición de cobertura
-
-## 📋 Casos de Uso Principales
-
-1. **Registrar Cancha**
-   ```java
-   CanchaService.registrarCancha(nombre, tipoDeporte, horarios)
-   ```
-
-2. **Crear Reserva**
-   ```java
-   ReservaService.crearReserva(cancha, fechaHora, usuario)
-   ```
-
-3. **Verificar Disponibilidad**
-   ```java
-   ReservaService.esCanchaDisponible(cancha, fechaHora)
-   ```
-
-4. **Cancelar Reserva**
-   ```java
-   ReservaService.cancelarReserva(reservaId)
-   ```
-
-## 🐛 Manejo de Errores
-
-### Excepciones Personalizadas
-- `CanchaNoDisponibleException`: Cancha ocupada en el horario
-- `ReservaNoEncontradaException`: Reserva inexistente
-- `ReservaException`: Excepción base para el dominio
-
-## 📈 Próximos Pasos
-
-1. **Persistencia**: Implementar repositorios con JPA/Hibernate
-2. **API REST**: Exposición de servicios vía Spring Boot
-3. **Frontend**: Interfaz web para usuarios finales
-4. **Notificaciones**: Sistema de alertas por email/SMS
-
-## 👥 Contribución
-
-Este proyecto sigue las mejores prácticas de:
-- Commits semánticos
-- Tests obligatorios para nuevas funcionalidades  
-- Code review requerido
-- Cobertura mínima del 80%
-
-## 📄 Licencia
-
-Proyecto desarrollado para fines educativos con ayuda de Claude - CodeWave Startup
+**Archivos:**
+- `ReservaTest.java`
+- `CanchaTest.java`
+- `ReservaServiceTest.java`
+- `CanchaServiceTest.java`
+- `ValidacionUtilTest.java`
 
 ---
 
-*Desarrollado con ❤️ siguiendo TDD y principios SOLID*
+## 2️⃣ Principios de Diseño (SOLID, YAGNI, KISS, DRY)
 
-# Comparativa entre JUnit y TestNG
+**Archivos:**
+- `ReservaService.java`, `CanchaService.java`
+- `Reserva.java`, `Cancha.java`
 
-| Característica         | JUnit 5                          | TestNG                          |
-|-----------------------|-----------------------------------|---------------------------------|
-| **Anotaciones**       | @Test, @BeforeEach, @AfterEach    | @Test, @BeforeMethod, @AfterMethod |
-| **Parametrización**   | @ParameterizedTest, @ValueSource  | @DataProvider                   |
-| **Integración**       | Fácil con Maven/Gradle, IDEs      | Fácil con Maven/Gradle, IDEs    |
-| **Reportes**          | Integración con JaCoCo, surefire  | Integración con surefire, plugins|
-| **Flexibilidad**      | Muy flexible, modular, extensible | Flexible, permite dependencias entre tests |
-| **Popularidad**       | Muy popular en proyectos Java      | Popular, especialmente en pruebas avanzadas |
-| **Soporte**           | Comunidad amplia, documentación   | Comunidad activa, buena documentación |
+**Evidencia:**
+- Uso de **Inversión de Dependencias** en los servicios.
+- Métodos con **Responsabilidad Única**.
+- Comentarios en métodos y constructores.
+- Estructura modular y **reutilizable (DRY)**.
 
-**Elección recomendada:**
+---
 
-Para este proyecto se utiliza **JUnit 5** por su integración nativa con herramientas modernas (JaCoCo, Maven), su sintaxis clara y modularidad, además de ser el estándar en la industria para proyectos Java recientes. TestNG es útil para pruebas más complejas con dependencias entre tests, pero JUnit cubre todas las necesidades del módulo actual.
+## 3️⃣ Uso de Mocks, Verificaciones y Capturas
+
+**Archivos:**
+- `ReservaServiceTest.java`
+- `CanchaServiceTest.java`
+
+**Ejemplos:**
+```java
+@Mock
+private ReservaRepository reservaRepository;
+
+verify(reservaRepository, times(1)).save(any(Reserva.class));
+when(reservaRepository.findAll()).thenReturn(listaReservas);
+```
+
+## 4️⃣ Medición de cobertura (JaCoCo)
+
+- **Archivo:** `index.html` (reporte generado)  
+- **Evidencia:**  
+  - `README.md` explica cómo generar y revisar el reporte  
+  - Objetivo de cobertura **mínimo 80%** documentado  
+
+---
+
+## 5️⃣ ATDD y aceptación
+
+- **Archivo:** `user-stories.md`  
+- **Evidencia:**  
+  - Historias de usuario con criterios de aceptación claros  
+  - Escenarios **BDD (Given, When, Then)** redactados  
+
+---
+
+## 6️⃣ Comparación entre frameworks de testing
+
+- **Archivo:** `README.md` (tabla comparativa agregada)  
+- **Evidencia:**  
+  - Tabla con diferencias entre frameworks  
+  - Justificación de la elección documentada  
