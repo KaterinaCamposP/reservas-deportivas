@@ -54,7 +54,6 @@ open target/site/jacoco/index.html
 - `CanchaTest.java`
 - `ReservaServiceTest.java`
 - `CanchaServiceTest.java`
-- `ValidacionUtilTest.java`
 
 ---
 
@@ -91,7 +90,7 @@ when(reservaRepository.findAll()).thenReturn(listaReservas);
 
 - **Archivo:** `index.html` (reporte generado)  
 - **Evidencia:**  
-  - `README.md` explica cómo generar y revisar el reporte  
+  - `documentacion.md` explica cómo generar y revisar el reporte  
   - Objetivo de cobertura **mínimo 80%** documentado  
 
 ---

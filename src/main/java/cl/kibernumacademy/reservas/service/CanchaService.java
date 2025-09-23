@@ -3,7 +3,7 @@ package cl.kibernumacademy.reservas.service;
 import cl.kibernumacademy.reservas.model.Cancha;
 import cl.kibernumacademy.reservas.model.TipoDeporte;
 import cl.kibernumacademy.reservas.repository.CanchaRepository;
-import cl.kibernumacademy.reservas.exception.ReservaException;
+//import cl.kibernumacademy.reservas.exception.ReservaException;
 import java.time.LocalTime;
 import java.util.List;
 import java.util.Optional;
