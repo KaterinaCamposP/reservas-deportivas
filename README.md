@@ -1,11 +1,4 @@
-# Evaluación Modular 3 -Equipo 8
-
-Participantes:
-- Daniela Figueroa
-- Katerina Campos 
-
-Objetivo: 
-- Evaluar la capacidad del estudiante para aplicar de forma integrada técnicas de TDD, ATDD, diseño basado en principios SOLID, pruebas unitarias, uso de mocks, medición de cobertura y automatización de tests, desarrollando un módulo funcional de software con pruebas asociadas y buenas prácticas de la industria.
+Se evaluan técnicas de TDD, ATDD, diseño basado en principios SOLID, pruebas unitarias, uso de mocks, medición de cobertura y automatización de tests, desarrollando un módulo funcional de software con pruebas asociadas y buenas prácticas de la industria.
 
 # Comparativa entre JUnit y TestNG
 
